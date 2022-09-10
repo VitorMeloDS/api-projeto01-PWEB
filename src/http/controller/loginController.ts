@@ -9,7 +9,6 @@ export class LoginController {
 
     const login = atob(req.body.headers.Authorization?.split(' ')[1]).split(':')
 
-    
     await conn
       .table('tb_usuario')
       .select('email', 'senha')

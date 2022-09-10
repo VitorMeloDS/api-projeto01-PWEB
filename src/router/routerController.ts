@@ -1,4 +1,5 @@
 import { Request, Response, Router } from "express";
+import { CadastroController } from "../http/controller/cadastroController";
 import { LoginController } from "../http/controller/loginController";
 
 const routerController: Router = Router();
@@ -9,7 +10,8 @@ routerController.post('/login', (req: Request, res: Response) => {
 });
 
 routerController.post('/cadastro', (req: Request, res: Response) => {
-
+  const cadastro = new CadastroController();
+  cadastro.dadosUsuario(req, res)
 })
 
 
